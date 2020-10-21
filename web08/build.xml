@@ -1,0 +1,64 @@
+<project name="web08" basedir="." default="deploy">
+
+	<path id="project.lib">
+		<fileset dir="WebContent/WEB-INF/lib">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+
+
+	<path id="java.lib">
+		<fileset dir="C:\Tomcat 7.0\lib">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+	
+
+	<target name="clean">
+		<delete dir="target"/>
+		<delete dir="temp/src"/>
+		<delete dir="temp/WEB-INF/lib"/>
+		<delete dir="temp/META-INF"/>
+		<delete dir="temp/WEB-INF"/>
+		<delete dir="temp"/>
+	</target>
+
+	<target name="prepare" depends="clean">
+		<mkdir dir="target"/>
+		<mkdir dir="temp/src"/>
+		<mkdir dir="temp/WEB-INF/lib"/>
+		<mkdir dir="temp/META-INF"/>
+	</target>
+
+	<target name="compile" depends="prepare">
+		<echo>=== COMPILE ===</echo>
+		<javac srcdir="src/com/bit" destdir="temp/src" includeAntRuntime="false">
+			<classpath refid="project.lib"/>
+			<classpath refid="java.lib"/>
+		</javac>
+	</target>
+
+	<target name="package" depends="compile">
+		<echo>=== COPYING ===</echo>
+
+		<copy file="WebContent/META-INF/MANIFEST.MF" tofile="temp/META-INF/MANIFEST.MF" overwrite="true"/>
+		<copy file="WebContent/WEB-INF/web.xml" tofile="temp/WEB-INF/web.xml" overwrite="true"/>
+		<copy todir="temp">
+			<fileset dir="WebContent">
+				<include name="**/*.jsp"/>
+			</fileset>
+		</copy>
+
+		<echo>=== PACKAGING ===</echo>
+		<war destfile="target/${ant.project.name}.war" webxml="temp/WEB-INF/web.xml" basedir="temp">
+			<lib dir="WebContent/WEB-INF/lib"/>
+			<classes dir="temp/src"/>
+		</war>
+	</target>
+
+	<target name="deploy" depends="package">
+		<echo>=== DEPLOYING ===</echo>
+		<copy file="target/${ant.project.name}.war" tofile="C:\Tomcat 7.0\webapps\${ant.project.name}.war" overwrite="true" />
+	</target>
+
+</project>

@@ -1,0 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <div id="menu">
+		<ul>
+			<li><a href="<%= root %>/index">HOME</a></li>
+			<li><a href="<%= root %>/member/list">MEMBER</a></li>
+			<li><a href="<%= root %>/location/list">LOCATION</a></li>
+			<li><a href="<%= root %>/login">LOGIN</a></li>
+		</ul>
+	</div>
+	<div id="content">

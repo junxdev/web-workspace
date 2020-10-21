@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $.ajax({
+                'url' : 'http://192.168.0.148:8080/HTML12/ex07.jsp',
+                'type' : 'get',
+                'dataType' : 'jsonp',
+                'jsonCallback' : 'myCall',
+                'success' : function(data) {
+                console.log(data);
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>PARSING</h1>
+    <div id="target"></div>
+</body>
+
+</html>

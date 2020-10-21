@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+	String root = request.getContextPath();
+%>
+	<div>
+		<img alt="" src= "<%= root %>/css/img/redstar.svg" style="width: 100px">
+		<ul>
+			<li><a href="index.bit">HOME</a></li>
+			<li><a href="list.bit">LIST</a></li>
+				<c:if test="${user eq null }">
+			<li>
+					<a href="login.bit">LOG IN</a>
+			</li>
+				</c:if>
+				<c:if test="${user ne null }">
+			<li>
+					<a href="logout.bit">LOG OUT</a>
+			</li>
+			<li>${user.name }님</li>
+				</c:if>
+		</ul>
+	</div>

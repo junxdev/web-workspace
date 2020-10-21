@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            div {
+                width: 150px;
+                height: 150px;
+                background-color: gray;
+            }
+            body > div:first-child {
+                margin-top: 0px;
+                background-color: #ff0000;
+            }
+            body > div:nth-child(2) {
+                position: relative; /* 기본값 */
+/*
+                position: fixed; 화면 상 절대 위치 ex. 상단 네비게이션, 메뉴, 우측 하단 토글 ;내용을 fixed component로 덮지 않도록 유의
+                position: absolute; 문서 상 절대 위치
+                position: relative; 문서 상 기존 위치 대비 상대 위치
+*/
+                top: 0px;
+                left: 0px;
+                background-color: #00ff00;
+            }
+            body > div:nth-child(3) {
+                background-color: #0000ff;
+            }
+            div > div {
+                position: fixed; /* Parent Component를 기준으로; Child가 fixed일 경우는 무시 */
+                opacity: 1;
+                top: 0px;
+                left: 0px;
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <div>BOX 1</div>
+        <div>BOX 2
+            <div>BOX 2A</div>
+        </div>
+        <div>BOX 3</div>
+        <div>BOX 4</div>
+    </body>
+</html>

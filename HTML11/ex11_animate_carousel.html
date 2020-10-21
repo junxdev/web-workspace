@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <style type="text/css">
+        div {
+            width: 600px;
+            overflow: hidden;
+        }
+        ul {
+            list-style: none;
+            padding: 0px;
+            width: 2000px;
+        }
+
+        ul>li {
+            float: left;
+        }
+
+        ul>li>img {}
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        function loop() {
+            $('ul').animate({'margin-left' : '-200px'}, 1000).delay(100)
+            .animate({'margin-left' : '-400px'}, 1000).delay(100)
+            .animate({'margin-left' : '-600px'}, 1000).delay(100)
+            .animate({'margin-left' : '-800px'}, 1000).delay(100)
+            .animate({'margin-left' : '-1000px'}, 1000).delay(100)
+            .animate({'margin-left' : '-1200px'}, 1000)
+            .animate({'margin-left' : '0px'}, 3000);
+            setTimeout(loop, 9500);
+        }
+        $(document).ready(function() {
+            loop();
+        })
+        $('div').
+    </script>
+</head>
+
+<body>
+    <h1>Carousel</h1>
+    <div>
+        <ul>
+            <li><img src="img/placeholder1.jpg" alt=""></li>
+            <li><img src="img/placeholder2.jpg" alt=""></li>
+            <li><img src="img/placeholder3.jpg" alt=""></li>
+            <li><img src="img/placeholder4.jpg" alt=""></li>
+            <li><img src="img/placeholder5.jpg" alt=""></li>
+            <li><img src="img/placeholder6.jpg" alt=""></li>
+            <li><img src="img/placeholder7.jpg" alt=""></li>
+            <li><img src="img/placeholder8.jpg" alt=""></li>
+            <li><img src="img/placeholder9.jpg" alt=""></li>
+            <li><img src="img/placeholder10.jpg" alt=""></li>
+        </ul>
+    </div>
+</body></html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script type="text/javascript">
+        var input, btn, target;
+        window.onload = function() {
+            btn = document.querySelector('button');
+            btn.onclick = function() { // onclick property에 함수를 대입. 따라서 하나의 함수만 대입할 수 있음
+                console.log('LEVEL2 EVENT')
+            }
+            btn.addEventListener('click', function() {
+                console.log('LEVEL3 EVENT');
+            });
+            btn.addEventListener('click', clck);
+//            btn.removeEventListener('click', clck);
+        };
+        function clck() {
+            console.log('LEVEL3 EVENT AGAIN')
+        }
+    </script>
+</head>
+
+<body>
+    <h1>DOM LEVEL 3</h1>
+    <input type="text"/>
+    <button>GO</button>
+    <div id="target"></div>
+</body></html>

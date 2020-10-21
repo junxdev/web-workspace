@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <style type="text/css">
+        #target2 {
+            
+        }
+        #target2 ul {
+            list-style: none;
+            padding: 0px;
+        }
+        #target2 ul > li {
+            float: left;
+        }
+        #target2 img {
+            
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        var cnt = 0;
+        function car() {
+            cnt++;
+            if(cnt == 11) {
+                cnt = 1;
+            }
+            var img = $('<img/>').attr('src', 'img/placeholder' + cnt + '.jpg');
+            $('#target1').html(img);
+            setTimeout(car, 1000);
+        }
+        function car2() {
+            var first = $('ul > li').eq(0);
+            var temp = $('<ol/>').html(first); // <ol/>: document 상에는 존재하지 않는다.
+            $('ul').html($('ul').html() + temp.html())
+            setTimeout(car2, 1000);
+        }
+        window.onload = function() {
+//            car();
+            setTimeout(car2, 1000);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Carousel</h1>
+    <img src="" alt="">
+    <div id="target1"></div>
+    <div id="target2">
+        <ul>
+            <li><img src="img/placeholder1.jpg" alt=""></li>
+            <li><img src="img/placeholder2.jpg" alt=""></li>
+            <li><img src="img/placeholder3.jpg" alt=""></li>
+            <li><img src="img/placeholder4.jpg" alt=""></li>
+            <li><img src="img/placeholder5.jpg" alt=""></li>
+            <li><img src="img/placeholder6.jpg" alt=""></li>
+            <li><img src="img/placeholder7.jpg" alt=""></li>
+            <li><img src="img/placeholder8.jpg" alt=""></li>
+            <li><img src="img/placeholder9.jpg" alt=""></li>
+            <li><img src="img/placeholder10.jpg" alt=""></li>
+        </ul>
+    </div>
+</body></html>

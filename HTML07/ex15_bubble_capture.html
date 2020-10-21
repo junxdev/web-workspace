@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <style type="text/css">
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: black;
+        }
+        div > div {
+            width: 200px;
+            height: 200px;
+            background-color: gray;
+        }
+        div > div > div {
+            width: 100px;
+            height: 100px;
+            background-color: lightgray;
+        }
+        #b1 {
+            background-color: antiquewhite;
+        }
+        #b2 {
+            width: 200px;
+            height: 200px;
+            background-color: gray;
+            position: relative;
+            top: -200px;
+        }
+        #b3 {
+            width: 100px;
+            height: 100px;
+            background-color: lightgray;
+            position: relative;
+            top: -300px;
+        }
+    </style>
+    <script type="text/javascript">
+        var box1, box2, box3;
+        var boxx, boxy, boxz;
+        window.onload = function() {
+            box1 = document.querySelector('body > div');
+            box2 = document.querySelector('body > div > div');
+            box3 = document.querySelector('body > div > div > div');
+            
+//            box1.ondblclick = function() {
+//                console.log('BOX A CLICK');
+//            };
+//            box2.ondblclick = function(e) {
+//                e.stopPropagation(); // NO Bubbling
+//                console.log('BOX B CLICK');
+//            };
+//            box3.ondblclick = function(e) {
+//                console.log('BOX C CLICK');
+//            };
+            
+            box1.addEventListener('click', function(e) {
+                 console.log('BOX A CLIck');
+            }, false);
+            box2.addEventListener('click', function(e) {
+//                e.stopPropagation();
+                 console.log('BOX B CLIck');
+            }, false);
+            box3.addEventListener('click', function(e) {
+                 console.log('BOX C CLIck');
+            }, false);
+            
+            boxx = document.querySelector('#b1');
+            boxy = document.querySelector('#b2');
+            boxz = document.querySelector('#b3');
+            
+            boxx.ondblclick = function() {
+                console.log('BOX X CLICK');
+            };
+            boxy.ondblclick = function() {
+                console.log('BOX Y CLICK');
+            };
+            boxz.ondblclick = function() {
+                console.log('BOX Z CLICK');
+            };
+        };
+    </script>
+</head>
+
+<body>
+    <h1>Bubbling &amp; Capturing</h1>
+    <div>BOX A
+        <div>BOX B
+            <div>BOX C
+                
+            </div>
+        </div>        
+    </div>
+    <div id="b1">BOX X</div>
+    <div id="b2">BOX Y</div>
+    <div id="b3">BOX Z</div>
+</body>
+
+</html>

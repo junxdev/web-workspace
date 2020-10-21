@@ -1,0 +1,7 @@
+{"students" : [
+	{"num" : 1, "name" : "LOVE", "kor" : 90, "eng" : 38, "math" : 19}, 
+	{"num" : 2, "name" : "FUTURE", "kor" : 60, "eng" : 66, "math" : 72}, 
+	{"num" : 3, "name" : "MIRACLE", "kor" : 93, "eng" : 52, "math" : 85}, 
+	{"num" : 4, "name" : "GLORY", "kor" : 25, "eng" : 28, "math" : 99}, 
+	{"num" : 5, "name" : "HATE", "kor" : 53, "eng" : 63, "math" : 100} 
+]}

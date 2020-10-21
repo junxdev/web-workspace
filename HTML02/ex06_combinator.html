@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            h1, p {
+                color: red;
+            }
+            div > p { /* child selector */
+                color: blue;
+            }
+            div + p + p{ /* adjacent sibling selector */
+                background-color: blueviolet;
+            }
+            div ~ p { /* general sibling selector */
+                background-color: cadetblue
+            }
+            h2 + div + h3 {
+                color: aqua;
+            }
+            li:first-child {
+                color: chartreuse;
+            }
+            ol > li:last-child{
+                color: crimson;
+            }
+            ul > li:nth-child(3) {
+                background-color: darkkhaki;
+            }
+            ul > li:nth-child(even) {
+                background-color: deeppink;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Header 1(h1, p)</h1>
+        <h2>Header 2</h2>
+        <div></div>
+        <h3>Header 3 after h2, div(h2 + div + h3)</h3>
+        <div></div>
+        <h3>Header 4 after only div</h3>
+        <p>Paragraph 1(div ~ p)(h1, p)</p>
+        <p>Paragraph 2(div ~ p)</p>
+        <div>
+            <p>Paragraph 3(div > p)</p>
+        </div>
+        <p>Paragraph 4 after division 1(div ~ p)</p>
+        <p>Paragraph 5 after division 1(div + p + p)</p>
+        <div></div>
+        <p>Paragraph 6 after division 2(div ~ p)</p>
+        <ul>
+            <li>Unordered List 1(li:first-child)</li>
+            <li>Unordered List 2</li>
+            <li>Unordered List 3</li>
+            <li>Unordered List 4
+                <ul>
+                    <li>Unorderd Unorderd List 1(li:first-child)</li>
+                    <li>Unorderd Unorderd List 2</li>
+                    <li>Unorderd Unorderd List 3</li>
+                </ul>
+            </li>
+            <li>Unordered List 5</li>
+            <li>Unordered List 6</li>
+            <li>Unordered List 7</li>
+            <li>Unordered List 8</li>
+        </ul>
+        <ol>
+            <li>Orderd List 1(li:first-child)</li>
+            <li>Orderd List 2</li>
+            <li>Orderd List 3(ol > li:last-child)</li>
+        </ol>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+#header {}
+#header > h1 {
+	width: 1000px;
+	height: 200px;
+	text-indent: -2000px;
+	margin: 0px auto;
+	background-image: url(../img/logo.svg);
+	background-repeat: no-repeat;
+	background-size: auto;
+}
+#header > form {
+	top: -200px;
+	position: relative;
+	width: 200px;
+	float: right;
+} /* 
+#header > form > div {
+	width: 200px;
+} 
+#header > form > div > label {
+	width: 50px;
+}
+#header > form > div > input {
+	width: 100px;
+} */
+#header > form > div > button {}

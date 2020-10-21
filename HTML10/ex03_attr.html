@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <style type="text/css">
+/*
+        img {
+            display: block;
+        }
+*/
+        .bigger {
+            width: 15em;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+//            $('img').attr({'src': 'img/placeholder1.jpg'});
+            $('img').attr({'src': function(i) {
+                return 'img/placeholder' + (i + 1) + '.jpg'} 
+            }).css({'display': 'block'});
+            $('a').attr('href', 'ex01.html');
+//            console.log($('input').attr('value')); not recommended: only returns the value given when document is created
+            console.log($('input').val());
+//            console.log($('input').attr('readonly')); not recommended: if no readonly, it returns undefined
+            console.log($('input').prop('readonly'));
+            $('img').addClass('bigger');
+        };
+    </script>
+</head>
+
+<body>
+    <h1>ATTRIBUTE METHOD</h1>
+    <p>PARAGRAPH</p>
+    <a href="#">ANCHOR</a>
+    <input type="text" value="value" readonly>
+    <img src="" alt=""/>
+    <img src="" alt=""/>
+    <img src="" alt=""/>
+    <img src="" alt=""/>
+    <img src="" alt=""/>
+    <img src="" alt=""/>
+    <img src="" alt=""/>
+    <img src="" alt=""/>
+    <img src="" alt=""/>
+    <img src="" alt=""/>
+</body></html>

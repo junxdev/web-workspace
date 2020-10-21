@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <style type="text/css">
+        ul {
+            list-style: none;
+        }
+/*
+        li {
+            display: block;
+        }
+*/
+        .hide {
+            display: none;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        var cnt = 0;
+        function next() {
+//            $('ul').children().eq(cnt++).css('display', 'block').siblings().css('display', 'none');
+            if(cnt == $('img').length) {
+                cnt = 0;
+            }
+            $('ul').children().eq(cnt++).removeClass('hide').siblings().addClass('hide');
+            setTimeout(next, 1000);
+        }
+        window.onload = function() {
+            next();
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li><a href="#"><img src="img/placeholder9.jpg" alt=""></a></li>
+            <li><a href="#"><img src="img/placeholder3.jpg" alt=""></a></li>
+            <li><a href="#"><img src="img/placeholder6.jpg" alt=""></a></li>
+            <li><a href="#"><img src="img/placeholder2.jpg" alt=""></a></li>
+            <li><a href="#"><img src="img/placeholder10.jpg" alt=""></a></li>
+            <li><a href="#"><img src="img/placeholder1.jpg" alt=""></a></li>
+        </ul>
+    </div>
+</body></html>

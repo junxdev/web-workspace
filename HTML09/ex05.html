@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <style type="text/css">
+        h1 {
+            width: 100px;
+            height: 200px;
+            padding: 10px;
+            border: 10px solid black;
+        }
+        div {
+            width: 202px;
+            height: 202px;
+            border: 50px solid rgba(200, 120, 170, 0.2);
+            overflow: hidden;
+        }
+        div > ul {
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+            width: 1212px;
+        }
+        div > ul > li {
+            float: left;
+        }
+        div > ul > li > a {}
+        div > ul > li > a > img {
+            width: 200px;
+            border: 1px solid black;
+        }
+        
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+//        var cnt = 0;
+        function next() {
+            var before = parseInt($('ul').css('margin-left'));
+//            if(cnt == 6) {
+            if(before == -(202 * 5)) {
+               $('ul').css('margin-left', '0px');
+//                cnt = 0;
+            } else {
+               $('ul').css('margin-left', (parseInt($('ul').css('margin-left')) - 202) + 'px');
+            }
+//            cnt++;
+        }
+        window.onload = function() {
+//            $('div').css('width', img-size * cnt + px').css('height', img-size + px').css('overflow', 'hidden'); // jQuery 변수화를 통한 노출 이미지 개수 제어(필요 없다면 CSS로 해도 무관)
+//            $('div > ul').css('width', (img-size * 6) + 'px');
+            setInterval(next, 1000);
+            console.log($('h1').width(), $('h1').height());
+            console.log($('h1').innerWidth(), $('h1').innerHeight());
+            console.log($('h1').outerWidth(), $('h1').outerWidth());
+            console.log($(document).width(), $(document).height());
+            
+        };
+    </script>
+</head>
+
+<body>
+   <h1>GALLERY ONEUL</h1>
+    <div>
+        <ul>
+            <li><a href="#"><img src="img/placeholder1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="img/placeholder10.jpg" alt=""></a></li>
+            <li><a href="#"><img src="img/placeholder2.jpg" alt=""></a></li>
+            <li><a href="#"><img src="img/placeholder3.jpg" alt=""></a></li>
+            <li><a href="#"><img src="img/placeholder4.jpg" alt=""></a></li>
+            <li><a href="#"><img src="img/placeholder5.jpg" alt=""></a></li>
+        </ul>
+    </div>
+</body></html>

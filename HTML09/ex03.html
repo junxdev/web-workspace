@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+//            var h1 = document.getElementsByTagName('h1');
+//            $('p').add(h1).css('color', 'red');
+//            $('p').each(function(i, e) {
+//                var palette = ['red', 'blue', 'gray', 'orchid'];
+//                console.log(i, e, this); // this: function이 행해진 객체
+//                $(this).css('color', palette[i]);
+//            })
+//            
+//            var test = ['a', 'b', 'c', 'd'];
+//            test.forEach(function(e, i) {
+//                console.log(i, e, this); // this: 별도로 객체가 지정되지 않았기 때문에(객체의 메서드가 아니기 때문에; forEach는 window의 메서드) window
+//            })
+            
+//            $('p').eq(0).css('color', 'yellow').next().css('color', 'yellow').next().css('color', 'yellow').end().css('background-color', 'black');
+//            
+//            $('li').filter(':first-child').css('color', 'brown');
+            
+//            var content = document.querySelector('h1 + p');
+//            $('body').find(content).css('font-size', '20px');
+//            console.log($('body').has('h1'));
+            
+//            $('h1, p').each(function() {
+//                var h1 = document.querySelector('h1');
+//                console.log($(this).is('h1'), $(this) === $(h1));
+//                // 'h1': true false
+//                // 'p': false false
+//                // ...
+//            })
+            $('h1').nextAll().css('font-weight', '900');
+            $('p').last().prevAll().css('font-style', 'oblique');
+            $('ol > li:nth-child(2)').parent().siblings().css('color', 'cyan');
+        }
+    </script>
+</head>
+
+<body>
+    <h1>traversion</h1>
+    <p>paragraph 1</p>
+    <p>paragraph 2</p>
+    <p>paragraph 3</p>
+    <p>paragraph 4</p>
+    <div>
+        <ul>
+            <li>ul 1</li>
+            <li>ul 2</li>
+            <li>ul 3</li>
+            <li>ul 4</li>
+        </ul>
+        <ol>
+            <li>ol 1</li>
+            <li>ol 2</li>
+            <li>ol 3</li>
+            <li>ol 4</li>
+        </ol>
+    </div>
+</body></html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>EX01</title>
+	<style type="text/css">
+		img {
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#target').load('ex01.jsp', {'name' : 'thumb', 'cnt' : '4'}, function() { // 'name=thumb&cnt=4'
+				$('img').css('border', '1px solid red'); // Callback으로 처리
+			});
+			// $('img').css('border', '1px solid red'); // 비동기 통신으로 먼저 실행될 수 있음
+			$('button').on('click', redBorder);
+		})
+		function redBorder() {
+			$('img').css('border', '3px solid red');
+		}
+	</script>
+</head>
+<body>
+	<h1>jQuery</h1>
+	<div id="target"></div>
+	<p>Images will be loaded on</p>
+	<button>LOAD</button>
+</body>
+</html>

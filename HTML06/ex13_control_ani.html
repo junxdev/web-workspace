@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <style type="text/css">
+        div {}
+
+        div>ul {
+            width: 1920px;
+            padding: 0px;
+            animation: ani1 5s ease-in-out 0s infinite alternate-reverse;
+            animation-play-state: running;
+        }
+
+
+        div>ul>li {
+            list-style: none;
+            float: left;
+        }
+
+        div>ul>li>img {
+            width: 200px;
+        }
+
+        @keyframes ani1 {
+            0% {
+                margin-left: 0px
+            }
+
+            100% {
+                margin-left: -1000px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ANIMATION</h1>
+    <button onclick="moveGuitar()">MOVE</button>
+    <button onclick="stopGuitar()">STOP</button>
+    <div>
+        <ul>
+            <li><img src="img/jaguar.jpg" alt=""></li>
+            <li><img src="img/jazzmaster.jpg" alt=""></li>
+            <li><img src="img/precision.jpg" alt=""></li>
+            <li><img src="img/stratocaster.jpg" alt=""></li>
+            <li><img src="img/telecaster.jpg" alt=""></li>
+            <li><img src="img/thinline.jpg" alt=""></li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        var ul = document.querySelector('ul');
+
+        function moveGuitar() {
+            console.log("moveGuitar");
+            ul.style.WebkitAnimation = "run";
+        }
+
+        function stopGuitar() {
+            console.log("stopGuitar");
+            ul.style.WebkitAnimation = "paused";
+//            ul.style.WebkitAnimation = "ani1 0s";
+        }
+    </script>
+</body></html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <style type="text/css">
+        body {}
+        body > div {}
+        body > div > ul {
+            padding: 0px;
+        }
+        body > div > ul > li {
+            width: 200px;
+            height: 50px;
+            margin-left: 20px;
+            list-style: none;
+            float: left;
+            overflow: hidden;
+            /* overflow: visible; */
+        }
+        body > div > ul > li > a {
+            display: block;
+            height: 50px;
+            background-color: antiquewhite;
+        }
+        body > div > ul > li > ol {
+            padding: 0px;
+        }
+        body > div > ul > li > ol > li {
+            height: 50px;
+            list-style: none;
+        }
+    </style>
+    <script>
+        var menu, list;
+        window.onload = function() {
+            menu = document.querySelectorAll('ul > li > a');
+            list = document.querySelectorAll('ul > li');
+            menu[1].addEventListener('mouseenter', function(e) {
+                menu[1].parentElement.style.overflow = 'visible';
+            }, true);
+            list[1].addEventListener('mouseleave', function(e) {
+                menu[1].parentElement.style.overflow = 'hidden';
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li>
+                <a href="#">SHOP</a>
+                <ol>
+                    <li>KITCHEN</li>    
+                    <li>LIVINGROOM</li>    
+                    <li>BEDROOM</li>    
+                    <li>BATHROOM</li>    
+                </ol>
+            </li>
+            <li>
+                <a href="#">A/S</a>
+                <ol>
+                    <li>POLICY</li>    
+                    <li>CONTRACT</li>    
+                    <li>BLOG</li>    
+                </ol>
+            </li>
+            <li><a href="#">CONTACT</a></li>
+        </ul>
+    </div>
+</body></html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <style type="text/css">
+        ul {
+            overflow: hidden;
+            height: 600px;
+        }
+        ul > li {
+            list-style: none;
+            float: left;
+        }
+        ul > li > img {
+            
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><img src="img/jaguar.jpg" alt=""></li>
+        <li><img src="img/jazzmaster.jpg" alt=""></li>
+        <li><img src="img/precision.jpg" alt=""></li>
+        <li><img src="img/stratocaster.jpg" alt=""></li>
+        <li><img src="img/telecaster.jpg" alt=""></li>
+        <li><img src="img/thinline.jpg" alt=""></li>
+    </ul>
+    <script type="text/javascript">
+        var ul = document.querySelector('ul');
+        function rotate() {
+            var li = ul.firstElementChild;
+            ul.appendChild(li);
+            setTimeout(rotate, 1000);
+        }
+        setTimeout(rotate, 1000);
+    </script>
+</body></html>

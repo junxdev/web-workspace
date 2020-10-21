@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <style type="text/css">
+        #source {
+            display: none;
+        }
+        #target {
+        }
+        #target > ul {
+            list-style: none;
+        }
+        #target > ul > li > img {
+            float: left;
+            width: 10%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Carousel</h1>
+    <div id="target">
+        <ul></ul>
+    </div>
+    <div id="source">
+        <ol>
+            <li><img src="img/jaguar.jpg" alt=""></li>
+            <li><img src="img/jazzmaster.jpg" alt=""></li>
+            <li><img src="img/precision.jpg" alt=""></li>
+            <li><img src="img/stratocaster.jpg" alt=""></li>
+            <li><img src="img/telecaster.jpg" alt=""></li>
+            <li><img src="img/thinline.jpg" alt=""></li>
+        </ol>
+    </div>
+    <script type="text/javascript">
+        var ol = document.querySelector('ol');
+        var ul = document.querySelector('ul');
+        function add() {
+            ul.appendChild(ol.firstElementChild);
+        }
+        function remove() {
+            ol.appendChild(ul.firstElementChild);
+        }
+        add();
+        add();
+        add();
+        function loop() {
+            remove();
+            add();
+            setTimeout(loop, 1000);
+        }
+        setTimeout(loop, 1000);
+    </script>
+</body>
+</html>

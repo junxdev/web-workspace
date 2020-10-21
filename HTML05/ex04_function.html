@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script type="text/javascript">
+//        fn01(); // Error : 변수를 실행할 수 없음. not function type
+        var fn01 = function () {
+            console.log("func01 run");
+        };
+        fn01();
+        console.log(typeof fn01); // function type
+        (function () {
+            console.log("anonymous function run");
+        })();
+        function func02() { // static처럼 function 영역에 저장
+            console.log("func02 run");
+        };
+        
+        var arr = [3, 7, 1, 5];
+        var fn03 = function(a, b) {
+            console.log(a, b);
+//            return -1;
+            return b - a;
+        };
+        arr.forEach(fn03);  
+        arr.sort(fn03);
+        console.log(arr);
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

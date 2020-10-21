@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script type="text/javascript">
+        function func01(x, y) {
+            console.log('func01 x = ' + (x + y));
+            return;
+        }
+        var a = func01();
+        console.log('a = ' + a);
+        func01(1, 2);
+        
+        var x = 100; // global variable
+        function func02() {
+            x = 200;
+//          var x = 300; // local variable
+            console.log('func02 x = ' + x);
+            return;
+        }
+        func02(); // 실행되며 x 값이 변경
+        console.log('x = ' + x);
+        
+        function func03() {
+            console.log()
+            for(var idx in arguments) {
+                console.log(arguments[idx]);
+            }
+            return;
+        }
+        func03(1, 2, 3);
+        
+        function func04() {
+            if(arguments[1]) { // undefined, 0... > false
+                return arguments[1] + arguments[0];
+            } else if(arguments[0]) { // has value > true
+                return arguments[0];
+            }
+        }
+        
+        a = func04(10);
+        console.log(a);
+        a = func04(10, 5);
+        console.log(a);
+    </script>
+</head>
+
+<body>
+
+</body></html>

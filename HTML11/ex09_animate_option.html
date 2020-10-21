@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <style type="text/css">
+        div {
+            width: 100px;
+            height: 100px;
+            color: white;
+            text-align: right;
+            background-color: black;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+        function ani() {
+            alert('END');
+        };
+        var lev = $('<p>SPAN</p>');
+        $(document).ready(function() {
+//            $('div').animate({'width' : '500px'}, 3000, 'swing', ani);
+            $('div').animate({'width' : '500px'}, {'duration' : 3000, 'easing' : 'easeOutElastic', 'done' : ani,
+//                                                  'step' : function(a, b) {
+//                                                      console.log('STEP', a, b)
+//                                                  }, 
+                                                   'progress' : function(a, b, c) {
+                                                      console.log('PROGRESS', a, b, c);
+                                                       $(lev).text(parseInt(b * 100) + "%");
+                                                       $(lev).text((parseInt(c / 100) / 10) + "초");
+                                                  }, 
+                                                   'start' : function() {
+                                                       $('div').append(lev);
+                                                   }
+                                                  });
+        
+        });
+    </script>
+</head>
+
+<body>
+    <h1>ANIMATION</h1>
+    <div></div>
+</body></html>

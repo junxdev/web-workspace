@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+</head>
+
+<body>
+    <h1>Creates Nodes</h1>
+    <p>Blah Blah</p>
+    <ul>
+        <li>ITEM A</li>
+        <li>ITEM B</li>
+        <li>ITEM C</li>
+        <li>ITEM D</li>
+    </ul>
+    <ol></ol>
+    <script type="text/javascript">
+//        var lis = document.getElementsByTagName('li'); // HTMLCollection(4) [li, li, li, li] > It's not one of the array type so can not use forEach();
+        var lis = document.querySelectorAll('li'); // NodeList(4) [li, li, li, li] 
+        var ul = document.getElementsByTagName('ul')[0];
+        var ol = document.getElementsByTagName('ol')[0];
+        lis.forEach(function(ele) {
+            var dubNode = ele.cloneNode(true);
+            ol.appendChild(dubNode);
+        });
+        lis.forEach(function(ele) {
+            ol.append(ele);
+        })
+//        for(var i = 0; i < lis.length; i++) {
+//            ol.appendChild(lis[0]); // First nod would be popped, so index is fixed to 0;
+//        }
+//        while(ul.childElementCount) {
+//            ol.appendChild(list[0]);
+//        }
+    </script>
+</body>
+
+</html>

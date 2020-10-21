@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>EX02</title>
+	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			console.log('?');
+			jQuery.get('ex01.jsp?name=thumb&cnt=3', function(d) {
+			var img = $(d).filter('img');
+			img.appendTo('#target');
+			console.log(img);
+		});
+//			jQuery.post('ex01.jsp', function(d) {
+//				var img = $(d).filter('img');
+//				img.appendTo('#target');
+//				console.log(img);
+//			});
+			
+		});
+	</script>
+</head>
+<body>
+	<h1>GET METHOD</h1>
+	<div id="target"></div>
+</body>
+</html>

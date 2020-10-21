@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+	<student>
+		<num>1</num>
+		<name>Tom</name>
+		<kor>34</kor>
+		<eng>64</eng>
+		<math>23</math>
+	</student>
+	<student>
+		<num>2</num>
+		<name>Silly</name>
+		<kor>84</kor>
+		<eng>51</eng>
+		<math>29</math>
+	</student>
+	<student>
+		<num>3</num>
+		<name>Love</name>
+		<kor>53</kor>
+		<eng>97</eng>
+		<math>35</math>
+	</student>
+</students>

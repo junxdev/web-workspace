@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <style type="text/css">
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: rebeccapurple;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            var target = document.querySelector('#target');
+            var body = document.querySelector('body');
+            function over(ele) {
+                console.log(ele + ' MOUSE OVER');
+            };
+            function out(ele) {
+                console.log(ele + ' MOUSE OUT');
+            };
+            target.onmouseover = function(e) {
+                over('target');
+                console.log(e);
+            };
+            target.onmouseout = function() {
+                out('target');
+            };
+            body.onmouseover = function() {
+                over('body');
+            };
+            body.onmouseout = function() {
+                out('body');
+            };
+//            target.onmouseover = function() {
+//                console.log('MOUSE OVER DIV');
+//            };
+//            target.onmouseout = function() {
+//                console.log('MOUSER OUT OF DIV');
+//            };
+//            target.onmouseenter = function() {
+//                console.log('MOUSE ENTER');
+//            };
+//            target.onmouseleave  = function() {
+//                console.log('MOUSE LEAVE');
+//            };
+        };
+    </script>
+</head>
+
+<body>
+    <h1>MOUSE EVENT</h1>
+    <div id="target"></div>
+</body></html>

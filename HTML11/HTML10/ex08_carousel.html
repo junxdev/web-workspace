@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <style type="text/css">
+        ul {
+            list-style: none;
+        }
+        ul > li {
+            height: 200px;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        function car() {
+            var first = $('ul > li').eq(0);
+            $('ul').append(first);
+            setTimeout(car, 500);
+        }
+        window.onload = function() {
+//            car();
+        }
+    </script>
+</head>
+
+<body>
+    <h1>CAROUSEL</h1>
+    <ul>
+        <li><img src="img/placeholder1.jpg" alt=""></li>
+        <li><img src="img/placeholder2.jpg" alt=""></li>
+        <li><img src="img/placeholder3.jpg" alt=""></li>
+        <li><img src="img/placeholder4.jpg" alt=""></li>
+        <li><img src="img/placeholder5.jpg" alt=""></li>
+        <li><img src="img/placeholder6.jpg" alt=""></li>
+        <li><img src="img/placeholder7.jpg" alt=""></li>
+        <li><img src="img/placeholder8.jpg" alt=""></li>
+        <li><img src="img/placeholder9.jpg" alt=""></li>
+        <li><img src="img/placeholder10.jpg" alt=""></li>
+    </ul>
+</body></html>

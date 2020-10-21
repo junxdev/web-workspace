@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script type="text/javascript">
+        var cnt = 1;
+        var arr = [5,3,1,7,0];
+        arr.sort(function(a, b) {
+            console.log(b, a, cnt++, arr);
+            return a - b;
+        });
+        console.log(arr);
+        var arr2 = arr.filter(function(currVal, idx, arr) {
+            console.log(currVal, idx, arr);
+            return currVal > 3;
+        })
+        console.log(arr2);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

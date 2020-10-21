@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <style type="text/css">
+        .cl01 {
+            background-color: rgba(125,37,75,0.8);
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            console.log($('h1').text());
+            $('h1').text('CYBERPUNK 2077');
+            $('h1').html('CYBERPUNK</br>2077');
+            $('ul').html($('ul').html() + '<li class="cl01">OPT 3(New Added)</li>');
+        }
+    </script>
+</head>
+
+<body>
+    <h1>DOM MSG</h1>
+    <ul>
+        <li>OPT 1</li>
+        <li>OPT 2</li>
+    </ul>
+</body></html>

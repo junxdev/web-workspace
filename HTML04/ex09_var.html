@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script type="text/javascript">
+        // 모든 자료형은 var로 표시한다. 다음은 javascript에 한해서 제공하는 자료형(web, node.js 등에서 확장)
+        // 참조할 주소의 값의 크기는 일정하다 : 0x0000 ~ 0xffff
+        var a;
+        // undefined
+        console.log(typeof a, a);
+        // 모든 숫자는 number
+        a = 1234;
+        console.log(typeof a, a);
+        a = 12.34;
+        console.log(typeof a, a);
+        // 모든 문자, 문자열은 string
+        a = "Hello World";
+        console.log(typeof a, a);
+        a = 'A';
+        console.log(typeof a, a);
+        a = "'A'";
+        console.log(typeof a, a);
+        a = '"A"';
+        console.log(typeof a, a);
+        // boolean
+        a = true;
+        console.log(typeof a, a);
+        a = false;
+        console.log(typeof a, a);
+        // object
+        a = new Object();
+        console.log(typeof a, a);
+        // array
+        a = new Array(10);
+        a.push("First");
+        a[0] = "First";
+        console.log(typeof a, a);
+        // null
+        a = null;
+        console.log(typeof a, a);
+        // function
+        a = function func01() {}
+        console.log(typeof a, a);
+        var b;
+        b = a + 1;
+        console.log(b);
+        var c;
+        c = 'c';
+        console.log(c);
+        c = "hello";
+        console.log(c);
+        document.write("<h1>" + c + "</h1>");
+        var d;
+        d = 5;
+        d =2.5
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

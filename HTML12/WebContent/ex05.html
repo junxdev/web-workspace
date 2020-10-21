@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$.get('deptlist.bit', function(d) {
+			 d.dept.forEach(function(e, i) {
+				$('table').append('<tr><td>' + e.deptno
+						+ '</td><td>' + e.dname
+						+ '</td><td>' + e.loc
+						+ '</td></tr>');
+			});
+			/* console.log(d);
+			for(var i = 0; i < d.dept.length; i++) {
+				var obj = d.dept[i];
+				$('table').append('<tr><td>' + obj.deptno
+						+ '</td><td>' + obj.dname
+						+ '</td><td>' + obj.loc
+						+ '</td></tr>');
+			} */
+		/* }, "json"); */
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>dept list</h1>
+	<table>
+		<tr>
+			<th>deptno</th>
+			<th>dname</th>
+			<th>loc</th>
+		</tr>
+	</table>
+</body>
+</html>

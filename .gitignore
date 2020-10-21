@@ -1,0 +1,12 @@
+.metadata/
+.recommenders/
+fgg/
+*.classpath
+*.project
+*.jsdtscope
+**/.settings/
+Servers/
+**/temp/
+*.war
+*.jar
+*.class

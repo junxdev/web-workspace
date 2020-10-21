@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script type="text/javascript">
+        var input;
+        window.onload = function() {
+            input = document.querySelector('input');
+            input.onkeydown = function(e) {
+                console.log('down : ' + input.value);
+                console.log(e);
+            };
+            input.onkeyup = function() {
+                console.log('up : ' + input.value);
+            }
+            input.onkeypress = function() {
+                console.log('press : ' + input.value);
+            };
+        };
+    </script>
+</head>
+
+<body>
+    <h1>KEY EVENT</h1>
+    <input type="text"/>
+</body></html>

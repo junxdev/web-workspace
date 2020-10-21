@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <style type="text/css">
+        #black {
+            width: 500px;
+            height: 500px;
+            background-color: black;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        // jQuery Animation은 CSS를 활용하므로 성능에 큰 영향을 끼치지 않음
+        function ding() {
+            console.log('over');
+        };
+        $(document).ready(function() {
+            $('button').eq(0).click(function() {
+//                $('div').hide('slow');
+//                $('div').slideUp('slow');
+                $('#black').fadeOut('slow', ding);
+            });
+            $('button').eq(1).click(function() {
+                $('#black').show('fast', function() {
+                    console.log('OVER');
+                });
+            });
+            $('button').eq(2).click(function() {
+                $('#black').fadeToggle(3000, ding);
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Animation</h1>
+    <button>HIDE</button>
+    <button>SHOW</button>
+    <button>TOGGLE</button>
+    <div>
+        <div id="black"></div>
+    </div>
+</body></html>

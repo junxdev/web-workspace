@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        console.log(jQuery);
+        console.log($);
+        console.log(jQuery===$);
+        /*
+        1. Selector: Get DOM(elements or nodes) which you want to handle.
+        2. Attribute
+        3. Event
+        4. Communication
+        */
+        window.onload = function() {
+            jQuery('h1').css('color', 'rgb(10, 250, 10)');
+            $('p').css('color', 'blue');
+        }
+    </script>
+</head>
+
+<body>
+    <h1>jquery</h1>
+    <p>Importing jquery</p>
+    <ul>
+        <li>item a</li>
+        <li>item b</li>
+        <li>item c</li>
+        <li>item d</li>
+    </ul>
+</body>
+
+</html>

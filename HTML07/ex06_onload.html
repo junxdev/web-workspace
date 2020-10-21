@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script type="text/javascript">
+//        var h1 = document.querySelector('h1');  
+//        console.log('Loaded'); body의 h1이 아직 작성되지 않아 null
+        function fn() {
+            var h1 = document.querySelector('h1');
+            console.log(h1);
+            console.log('Loaded');
+        }
+        window.onload = fn;
+        window.onbeforeunload = function() {
+            console.log('loaindg');
+        }
+    </script>
+</head>
+
+<body>
+    <h1>EVENT DOM LEVEL 2</h1>
+</body></html>

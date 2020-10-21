@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>PLANET TERROR</title>
+	<link rel="stylesheet" type="text/css" href="css/header2.css"/>
+	<link rel="stylesheet" type="text/css" href="css/jquery.bxslider.min.css"/>
+	<style type="text/css">
+		#nav {
+			background-color: rgba(230, 169, 4, 1);
+			height: 100px;
+		}
+		#nav > ul {
+			list-style: none;
+			width: 1200px;
+			margin: 0px auto;
+			padding: 0px;
+		}
+		#nav > ul > li {
+			float: left;
+			width: 300px;
+			height: 100px;
+			line-height: 100px;
+		}
+		#nav > ul > li > a {
+			font-size: 30px;
+			color: rgba(0, 0, 0, 1);
+			text-align: center;
+			display: block;
+			text-decoration: none;
+			font-weight: 900
+		}
+		#nav > ul > li > a:hover {
+			
+		}
+		#nav > ul > li > ol {
+			margin: 0px;
+			padding: 0px;
+			list-style: none;
+			display: none;
+			position: relative;
+			z-index: 7;
+		}
+		#nav > ul > li > ol > li {
+			height: 75px;
+		}
+		#nav > ul > li > ol > li > a {
+			height: 75px;
+			line-height: 75px;
+			color: rgba(0, 0, 0, 1);
+			text-align: center;
+			display: block;
+			background-color: rgba(230, 169, 4, 1);
+			text-decoration: none;
+			font-weight: 900
+		}
+		#section ul{
+			margin: 0px;
+			padding: 0px;
+		}
+		#main-carousel {
+			width: 500px;
+			margin: 10px auto;
+		}
+		#single table {
+			width: 400px;
+			margin: 0px auto;
+			text-align: center;
+		}
+		#single table, th, td {
+			border-collapse: collapse;
+			border: 1px solid black;
+		}
+		#single a {
+			margin: 5px auto;
+			display: inline-block;
+			width: 200px;
+			height: 50px;
+			background-color: rgba(230, 169, 4, 1);
+			border-radius: 25px;
+			color: black;
+			text-align: center;
+			line-height: 50px;
+			text-decoratoin: none;
+		}
+		.bx-wrapper{
+			margin: 0px auto;
+		}
+		#big img {
+			width: 400px;
+			height: 400px;
+		}
+		#thumb > ul > li > img {
+			width: 100px;
+		}
+		#footer {
+			background-color: rgba(230, 169, 4, 1);
+		}
+		#footer > div{
+			width: 300px;
+			margin: 0px auto;
+		}
+		#empForm
+		, #deptForm {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(100, 100, 100, 0.5);
+		}
+		#empForm > h2
+		, #deptForm > h2{
+			margin: 200px auto 0px auto;
+			width: 600px;
+			padding-top: 30px; 
+			background-color: white;
+			text-align: center;
+		}
+		#empForm > form
+		, #deptForm > form {
+			background-color: white;
+			margin: 0px auto;
+			padding: 0px;
+			width: 600px;
+			height: 300px;
+		}
+		#empForm > form > div
+		, #deptForm > form > div {
+			width: 600px;
+			padding-top: 30px;
+			margin: 0px auto;
+		}
+		#empForm > form > div > label
+		, #deptForm > form > div > label {
+			display: inline-block;
+			width: 220px;
+			text-align: right;
+		}
+		#empForm > form > div > label + span
+		, #deptForm> form > div > label + span  {
+			display: inline-block;
+			width: 300px;
+			text-align: center;
+		}
+		#empForm > form > input
+		, #deptForm > form > input {
+			width: 200px;
+		}
+		#empForm > form > div:nth-child(9)
+		, #deptForm > form > div:nth-child(4) {
+			text-align: center;
+			padding-right: 0px;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
+	<script type="text/javascript">
+		var big, nav1, nav2, nav3, nav4; 
+		var nav2_1, nav2_2, nav2_3;
+		function getDeptList() {
+			$('#single').slideDown();
+			$.get('deptlist.bit', function(d) {
+				 d.dept.forEach(function(e, i) {
+					$('table').append('<tr><td>' + e.deptno
+							+ '</td><td>' + e.dname
+							+ '</td><td>' + e.loc
+							+ '</td></tr>');
+				});
+			});
+		}
+		function getEmpList() {
+			$('#single').fadeOut(function() {
+				$('#single').html('<h2 style="text-align:center">TERRORISTS</h2><table/><a href="#">NEW TERRORIST</a>')
+				$('<tr/>').append('<th>ID</th>')
+							.append('<th>NAME</th>')
+							.append('<th>JOB</th>')
+							.append('<th>MANAGER</th>')
+							.append('<th>HIREDATE</th>')
+							.append('<th>SALARY</th>')
+							.append('<th>COMMISSION</th>')
+							.append('<th>DEPARTMENT</th>')
+							.appendTo('table');
+				$.get('emplist.bit', function(d) {
+					$(d).find('emp').each(function() {
+						$('<tr/>').append('<td>' + $(this).children().eq(0).text() + '</td>')
+									.append('<td>' + $(this).children().eq(1).text() + '</td>')
+									.append('<td>' + $(this).children().eq(2).text() + '</td>')
+									.append('<td>' + $(this).children().eq(3).text() + '</td>')
+									.append('<td>' + $(this).children().eq(4).text() + '</td>')
+									.append('<td>' + $(this).children().eq(5).text() + '</td>')
+									.append('<td>' + $(this).children().eq(6).text() + '</td>')
+									.append('<td>' + $(this).children().eq(7).text() + '</td>')
+									.appendTo('table');
+					});
+					$('#single').delay(50).fadeIn();
+					$('#empForm').css('height', $(document).outerHeight());
+				});
+				$('#single a').click(function() {
+					addshow();
+					$('#empForm').show();
+					return false;
+				});
+			});
+		}
+		function addshow() {
+			$('#empForm > h2').text('Welcome, New Terrorist!');
+			$('#empForm > form').css('height', 300);
+			$('#empForm > form > div').eq(4).hide();
+			$('#empForm > form > div').eq(5).hide();
+			$('#empForm > form > div').eq(6).hide();
+			$('#empForm > form > div').eq(7).hide();
+			$('#empForm > form > div > label').each(function() {
+				$(this).next().show();
+			});
+		};
+		function editshow() {
+			$('#empForm > h2').text('Terrorist Profile');
+			$('#empForm > form').css('height', 500);
+			$('#empForm > form > div').eq(4).show();
+			$('#empForm > form > div').eq(5).show();
+			$('#empForm > form > div').eq(6).show();
+			$('#empForm > form > div').eq(7).show();
+			$('#empForm > form > div > label').each(function() {
+				$(this).next().hide();
+				var msg = $(this).next().val();
+				$(this).after('<span>' + msg + '</span>');
+			});
+		};
+		
+		$(document).ready(function() {
+			
+			$(document).on('click', '#single > table tr', function() {
+				if($(this).parent().parent().prev().text() == 'TERROR DEPARTMENTS') {
+					var param = {'idx' : $(this).children().first().text()};
+					console.log(param);
+					$.getJSON('deptdetail.bit', param, function(data) {
+						console.log(data);
+						$('#deptForm').find('input').eq(0).val(data.dept[0].deptno)
+						.end().eq(1).val(data.dept[0].dname)
+						.end().eq(2).val(data.dept[0].loc);
+						$('#deptForm').show();
+					})
+				}
+				if($(this).parent().parent().prev().text() == 'TERRORISTS') {
+					var param = 'idx=' + $(this).children().first().text();
+					$.get('empdetail.bit', param, function(data) {
+						$('#empForm').show();
+						$('#empno').val($(data).find('empno').text());
+						$('#ename').val($(data).find('ename').text());
+						$('#job').val($(data).find('job').text());
+						$('#mgr').val($(data).find('mgr').text());
+						$('#hiredate').val($(data).find('hiredate').text());
+						$('#sal').val($(data).find('sal').text());
+						$('#comm').val($(data).find('comm').text());
+						$('#deptno').children().each(function() {
+							if($(this).val() == $(data).find('deptno').text()) {
+								$(this).prop('selected', true);
+							}
+						});
+						editshow();
+					});
+				}
+			});
+			
+			
+			$('#empForm > form').submit(function() {
+				console.log($(this).serialize());
+				if($(this).prev().text() == 'Welcome, New Terrorist!') {
+					$.post('empadd.bit', $(this).serialize(), function() {
+						$('#empForm').click();
+						getEmpList();
+					});
+				} else if($(this).prev().text() == 'Terrorist Profile') {
+					$('#empForm > form > div').find('span').remove();
+					$(this).prev().text('Update Terrorist');
+					$(this).find('label').next().show();
+					
+				} else if($(this.prev().text() == 'Update Terrorist')) {
+					// 수정 기능
+				}
+				return false;
+			});
+			
+			nav2 = $('#nav > ul > li').eq(1);
+			nav2_1 = nav2.find('li').eq(0);
+			nav2_2 = nav2.find('li').eq(1);
+			nav2_3 = nav2.find('li').eq(2);
+			nav2_3.click(function() {
+				$('#single').slideUp(function() {
+					$('#single').html('<h2 style="text-align:center">TERROR DEPARTMENTS</h2><table><tr><th>NUMBER</th><th>NAME</th><th>LOCATION</th></tr></table>');
+					getDeptList();
+				});
+				return false;
+			});
+			nav3 = $('#nav > ul > li').eq(2);
+			nav3.click(function() {
+				getEmpList();
+				return false;
+			});
+			
+			$('#empForm, #deptForm').hide().click(function(e) {
+				e.stopPropagation();
+				$('#empForm > form > div').find('span').remove();
+				$(this).hide();
+			});
+			
+			$('#empForm > h2, #empForm > form, #deptForm > h2, #deptForm > form').click(function(e) {
+				e.stopPropagation();
+			});
+			
+			$('#nav > ul > li').on('mouseenter', function() {
+				$(this).children('ol').stop().slideDown();
+			})
+			
+			$('#nav > ul > li').on('mouseleave', function() {
+				$(this).children('ol').stop().slideUp();
+			})
+			
+			big = $('#big > ul').bxSlider({
+				'slideWidth' : 400,
+				'pager' : false,
+				'controls' : false,
+				'mode' : 'fade'
+			});
+			
+			$('#thumb > ul').bxSlider({
+				'slideWidth' : 100,
+				'pager' : false,
+				'controls' : false,
+				'minSlides' : 2,
+				'maxSlides' : 4,
+				'moveSlides' : 1,
+				'auto' : true,
+				'pause' : 1000,
+				'onSlideBefore' : function(a, b, c) {
+					big.goToSlide(c);
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div>
+		<div id="header">
+			<h1>PLANET TERROR</h1>
+			<form>
+				<div>
+					<label for="id">ID</label>
+					<input type="text" id="id">
+				</div>
+				<div>
+					<label for="pw">PW</label>
+					<input type="password" id="pw">
+				</div>
+				<div>
+					<button type="submit">SIGN IN</button>
+					<button type="button">JOIN US</button>
+				</div>
+			</form>
+		</div>
+		<div id="nav">
+			<ul>
+				<li><a href="#">HOME</a></li>
+				<li>
+					<a href="#">ABOUT</a>
+					<ol>
+						<li><a href="#">VISION</a></li>
+						<li><a href="#">HISTORY</a></li>
+						<li><a href="#">DEPARTMENT</a></li>
+					</ol>				
+				</li>
+				<li><a href="#">MEMBER</a></li>
+				<li><a href="#">SHOP</a></li>
+			</ul>
+		</div>
+		<div id="section">
+			<div id="main-carousel">
+				<div id="big">
+					<ul>
+						<li><img alt="" src="img/thumb1.jpg"></li>
+						<li><img alt="" src="img/thumb2.jpg"></li>
+						<li><img alt="" src="img/thumb3.jpg"></li>
+						<li><img alt="" src="img/thumb4.jpg"></li>
+						<li><img alt="" src="img/thumb5.jpg"></li>
+						<li><img alt="" src="img/thumb6.jpg"></li>
+						<li><img alt="" src="img/thumb7.jpg"></li>
+						<li><img alt="" src="img/thumb8.jpg"></li>
+						<li><img alt="" src="img/thumb9.jpg"></li>
+						<li><img alt="" src="img/thumb10.jpg"></li>
+					</ul>
+				</div>
+				<div id="thumb">
+					<ul>
+						<li><img alt="" src="img/thumb1.jpg"></li>
+						<li><img alt="" src="img/thumb2.jpg"></li>
+						<li><img alt="" src="img/thumb3.jpg"></li>
+						<li><img alt="" src="img/thumb4.jpg"></li>
+						<li><img alt="" src="img/thumb5.jpg"></li>
+						<li><img alt="" src="img/thumb6.jpg"></li>
+						<li><img alt="" src="img/thumb7.jpg"></li>
+						<li><img alt="" src="img/thumb8.jpg"></li>
+						<li><img alt="" src="img/thumb9.jpg"></li>
+						<li><img alt="" src="img/thumb10.jpg"></li>
+					</ul>
+				</div>
+			</div>
+			<div id="single"></div>
+		</div>
+		<div id="footer">
+			<div>
+				<address>blah blah</address>
+				Copyright &copy; PLANET TERROR
+			</div>
+		</div>
+	</div>
+	<div id="empForm">
+		<h2>New Terrorist</h2>
+		<form>
+			<div>
+				<label for="empno">Number</label>
+				<input type="text" id="empno" name="empno">
+			</div>
+			<div>
+				<label for="ename">Name</label>
+				<input type="text" id="ename" name="ename">
+			</div>
+			<div>
+				<label for="job">Job</label>
+				<input type="text" id="job" name="job">
+			</div>
+			<div>
+				<label for="deptid">Department</label>
+				<select id="deptid" name="deptid">
+					<option value="10">Accounting</option>
+					<option value="20">Research</option>
+					<option value="30">Sales</option>
+					<option value="40">Operations</option>
+					<option value="50">Security</option>
+					<option value="60">Production</option>
+				</select>
+			</div>
+			<div>
+				<label for="mgr">Manager</label>
+				<input type="text" id="mgr" name="mgr">
+			</div>
+			<div>
+				<label for="hiredate">Hiredate</label>
+				<input type="text" id="hiredate" name="hiredate">
+			</div>
+			<div>
+				<label for="sal">Salary</label>
+				<input type="text" id="sal" name="sal">
+			</div>
+			<div>
+				<label for="comm">Commission</label>
+				<input type="text" id="comm" name="comm">
+			</div>
+			<div>
+				<button type="submit">OK</button>
+				<button type="button">Cancel</button>
+			</div>
+		</form>
+	</div>
+	<div id="deptForm">
+		<h2>NEW TERROR DEPARTMENT</h2>
+		<form>
+			<div>
+				<label for="deptno">Number</label>
+				<input type="text" id="deptno" name="deptno">
+			</div>
+			<div>
+				<label for="dname">Name</label>
+				<input type="text" id="dname" name="dname">
+			</div>
+			<div>
+				<label for="loc">Location</label>
+				<input type="text" id="loc" name="loc">
+			</div>
+			<div>
+				<button type="submit">OK</button>
+				<button type="button">Cancel</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

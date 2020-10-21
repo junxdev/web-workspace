@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            jQuery('p').css('background-color', 'blue');
+            var ele = document.querySelector('h1');
+            jQuery(ele).css('font-style', 'oblique');
+            jQuery(['a', 'b', 'c', 'd']).each(function(i, e) {
+                console.log(i, e);
+            });
+            var obj = {
+                'key1': 'value1',
+                'key2': 'value2'
+            };
+            jQuery(obj).each(function(i, e) {
+                console.log(i, e, e === obj);
+            });
+            jQuery(function() {
+                console.log('EVEN FUNCTION CAN BE CONTAINED')
+            });
+            jQuery('<h2>element type</h2>').each(function() {
+                console.log(this);
+            });
+            var msg = jQuery('h2');
+            console.log(msg.text());
+            var ele2 = jQuery('<h2>msg</h2>');
+            ele2.each(function() {
+                console.log($(this).text(), msg.text());
+            });
+            ele2.text('revision');
+            ele2.each(function() {
+                console.log($(this).text(), msg.text());
+            });
+
+        };
+    </script>
+</head>
+
+<body>
+    <h1>JQuery</h1>
+    <h2>test</h2>
+    <p>Hi</p>
+</body></html>

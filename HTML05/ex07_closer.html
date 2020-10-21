@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script type="text/javascript">
+        function fn01() {
+            var z = function() {console.log('closer test 1');};
+            return z;
+        }
+        var a = fn01();
+        a();
+        
+        function fn02() {
+            return function() {console.log('closer test 2');};
+        }
+        a = fn02();
+        a();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

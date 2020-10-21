@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+//            $('button').click(function() {
+//                console.log($(':text').val());
+//            });
+            $('button').on('click', ['a'], function(e, a, b, d) {
+                console.log($(':text').val(), e.data, a, b);
+            });
+            $('input').keyup(function(e) {
+//                if(e.keyCode == 13) $('button').click(); // 이미 선언된 코드를 활용
+                if(e.keyCode == 13) $('button').trigger('click', ['param', 'eter']); // 이미 선언된 코드를 활용
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <input type="text"><button>GO</button>
+</body></html>

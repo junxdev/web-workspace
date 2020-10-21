@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script type="text/javascript">
+        function makeFn() {
+            var name = "jun";
+            function displayName() {
+                console.log(name);
+            }
+            console.log("makeFn run");
+            return displayName;
+        }
+        
+        var fn1 = makeFn();
+        fn1();
+    </script>
+</head>
+
+<body>
+
+</body></html>

@@ -1,0 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+	</div>
+	<div id="footer">
+		<div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit
+			Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua 
+			Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+			<address>100 - 7405 Transcanadienne, St.Laurent, Quebec, H4T 1Z2</address>
+		</div>
+	</div>
+</div>

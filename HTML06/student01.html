@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <style type="text/css">
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var arr = new Array();
+        var obj = {'num' : 1, 'name' : 'PAUL', 'kor' : 10, 'eng' : 20, 'math' : 30};
+        arr.push(obj);
+        obj = {'num' : 2, 'name' : 'JENNY', 'kor' : 10, 'eng' : 20, 'math' : 30};
+        arr.push(obj);
+        obj = {'num' : 3, 'name' : 'TOM', 'kor' : 10, 'eng' : 20, 'math' : 30};
+        arr.push(obj);
+        
+        document.write('<table>');
+        document.write('<tr>');
+        document.write('<th>학번</th>');
+        document.write('<th>이름</th>');
+        document.write('<th>국어</th>');
+        document.write('<th>영어</th>');
+        document.write('<th>수학</th>');
+        document.write('</tr>');
+        for(var i = 0; i < arr.length; i++) {
+            obj = arr[i];
+            document.write('<tr>');
+            document.write('<td>' + obj.num + '</td>')
+            document.write('<td>' + obj.name + '</td>')
+            document.write('<td>' + obj.kor + '</td>')
+            document.write('<td>' + obj.eng + '</td>')
+            document.write('<td>' + obj.math + '</td>')
+            document.write('</tr>');
+        }
+        document.write('</table>')
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <style type="text/css">
+        .cl01 {
+            font-style: italic;
+        }
+        .cl02 {
+            font-weight: 900;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            $('h1').addClass('cl01');
+            $('li').addClass('cl02').addClass('cl01');
+            $('li:gt(3)').removeClass('cl01');
+        }
+    </script>
+</head>
+
+<body>
+    <h1>CSS CLASS</h1>
+    <ul>
+        <li>A</li>
+        <li>B</li>
+        <li>C</li>
+        <li>D</li>
+        <li>E</li>
+        <li>F</li>
+    </ul>
+</body></html>

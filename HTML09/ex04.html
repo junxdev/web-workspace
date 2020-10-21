@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <style type="text/css">
+        h1 {
+            color: brown;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            var h1 = document.querySelector('h1');
+            console.log(h1.style.color); // element의 속성을 가져옴: default가 별도로 지정되지 않았기 때문에 값이 없음
+            console.log($('h1').css('color')); // css의 값을 가져옴: css가 적용된 시점 이후
+            
+        }
+    </script>
+</head>
+
+<body>
+    <h1>css attribute</h1>
+<!--    <h1 style="color: brown">css attribute</h1> element 속성 부여 -->
+</body></html>

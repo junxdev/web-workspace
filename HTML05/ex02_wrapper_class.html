@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script type="text/javascript">
+        var a;
+        a = true;
+        console.log(typeof a, a); // auto-boxing with wrapper class
+        a = new Boolean();
+        console.log(typeof a, a);
+        a = new Boolean(true);
+        console.log(typeof a, a);
+        console.log(a === true); // false; type mismatched
+        
+        // number: 실수형
+        var b;
+        b = 1;
+        console.log(typeof b, b);
+        b = 1.1;
+        console.log(typeof b, b);
+        var x = new String("dog");
+        var y = new String("dog");
+        console.log(x == y, x === y)
+        console.log(Number.isNaN(parseInt("$100")), parseInt("$100"));
+        console.log(b.toString(), typeof b);
+        
+        // string
+        var c;
+        c = "STRING";
+        console.log(c.length);
+        
+        // array
+        var d;
+        d = new Array();
+        console.log(typeof d, d);
+        d = [1, 3, 5, 7, 9];
+        console.log(typeof d, d);
+        d = new Array(2, 4, 6, 8, 10);
+        console.log(typeof d, d);
+        for(var i = 0; i < d.length; i++) {
+            console.log(typeof d[i], d[i]);
+        }
+        d[100] = 'e';
+        console.log(d.length, typeof d);
+        console.log(d[101], d[99]);
+        d.reverse();
+        d.forEach(function (item, idx) {
+            console.log(item, idx);
+        });
+//        console.log(d.pop());
+//        console.log(d.pop());
+//        console.log(d.pop());
+//        console.log(d.pop());
+//        console.log(d.pop());
+//        console.log(d.pop()); // undefined
+//        while(d.length) { // 0 is false;
+//            console.log(d.pop());
+//        }
+//        var temp;
+//        while(temp = d.pop()) { // undefined is false;
+//            console.log(temp);
+//        }
+        for(var ele in d) {
+            console.log(d[ele]);
+        }
+        // object
+        var e;
+        e = new Object();
+        e = {'key1' : 'val1', 'key2' : 'val2'};
+        console.log(typeof e, e);
+        console.log(e['key1']);
+        e['key3'] = 3;
+        e['key4'] = new Array(1, 2, 3);
+        e[true] = 'TRUE';
+        e[d] = 'VAR D';
+        window.e['D'] = d;
+        console.log(e.D[99]);
+        console.log(e['key5'], e.key5);
+        for(var key in e) {
+            console.log(key, e[key]);
+        }
+    </script>
+</head>
+
+<body>
+
+</body></html>

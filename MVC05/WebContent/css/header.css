@@ -1,0 +1,39 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+dl {
+	border: 1px solid black;
+	width: 480px;
+	margin: 0px auto;
+}
+dl > dt {
+	width: 100px;
+	display: inline-block;
+}
+dl > dd {
+	width: 370px;
+	display: inline-block;
+}
+dl > dd > div {
+	width: 180px;
+	display: inline-block;
+	float: left;
+}
+body > div:first-child > img {}
+body > div:first-child > ul {
+	display: inline-block;
+	width: 400px;
+	list-style: none;
+	overflow: hidden;
+}
+body > div:first-child > ul > li {
+	width: 100px;
+	float: left;
+}
+body > div:first-child > ul > li > a{
+	display: block;
+	height: 50px;
+	text-decoration: none;
+	text-align: center;
+}

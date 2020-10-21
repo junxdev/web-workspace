@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        $(document).on('ready', function() {
+            console.log('LOADING');
+        });
+        $(document).ready(function() { // 나중에 선언했음에도 먼저 실행됨
+            console.log('READY');
+//            $('#id').click(function() {
+//                if($(this).val() == "ID를 입력하세요") {
+//                    $(this).val('');
+//                };
+//            });
+//            $('#pw').click(function() {
+//                if($(this).val() == "PW를 입력하세요") {
+//                    $(this).val('');
+//                };
+//            });
+            $('#id').focusin(function() {
+                if($(this).val() == "ID를 입력하세요") {
+                    $(this).val('');
+                };
+            });
+            $('#id').focusout(function() {
+                if($(this).val() == "") {
+                    $(this).val('ID를 입력하세요');
+                };
+            });
+            // $('id').on('click focusin', idin); 콜백 함수를 할당하고 싶은 함수를 나열할 수 있는 장점
+            $('#pw').focusin(function() {
+                if($(this).val() == "ID를 입력하세요") {
+                    $(this).val('');
+                };
+            });
+            $('#pw').focusout(function() {
+                if($(this).val() == "") {
+                    $(this).val('PW를 입력하세요');
+                };
+            });
+        });
+        $(window).load(function() {
+            console.log('WINDOW LOADED');
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Join us</h1>
+    <form action="">
+        <div>
+            <label for="id">id</label>
+            <input type="text" id="id" value="ID를 입력하세요">
+        </div>
+        <div>
+            <label for="pw">pw</label>
+            <input type="password" id="pw" value="PW를 입력하세요">
+        </div>
+        <div>
+            <button type="submit">Next</button>
+            <button type="reset">Cancel</button>
+        </div>
+    </form>
+</body></html>

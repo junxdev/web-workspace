@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+</head>
+
+<body>
+    <h1>선택자</h1>
+    <p class="cl01">내용 class01</p>
+    <p id="id01">내용 id01</p>
+    <p class="cl02">내용 class02</p>
+    <p></p>
+    <input type="text"/>
+    <button onclick="add()">추가</button>
+    <button onclick="del()">삭제</button>
+    <ul id="ul01">
+        <li>ITEM A</li>
+        <li>ITEM B</li>
+        <li>ITEM C</li>
+        <li>ITEM D</li>
+    </ul>
+    <script type="text/javascript">
+        var ul = document.querySelector('#ul01');
+        function add() {
+            var li = document.createElement('li');
+            var msg = 'ITEM ' + document.querySelector('input').value;
+            if(msg == "ITEM ") return;
+            msg = document.createTextNode(msg); 
+            li.appendChild(msg);
+            ul.appendChild(li);
+            document.querySelector('input').value = '';
+        }
+        function del() {
+            var li = ul.lastElementChild;
+            ul.removeChild(li);
+        }
+    </script>
+</body></html>

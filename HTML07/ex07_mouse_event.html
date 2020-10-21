@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script type="text/javascript">
+        window.onload = function() {
+            var btn = document.querySelector('button');
+            btn.onclick = function() {
+                console.log('CLICK');
+            };
+            btn.ondblclick = function() {
+                console.log('DOUBLE CLICK');
+            };
+            btn.onmousedown = function() {
+                console.log('MOUSE DOWN');
+            };
+            btn.onmouseup= function() {
+                console.log('MOUSE UP');
+            };
+            
+        };
+    </script>
+</head>
+
+<body>
+    <h1>MOUSE EVENT</h1>
+    <button>CLICK</button>
+</body></html>

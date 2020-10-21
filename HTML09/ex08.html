@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            $('form > div').children().filter('label:first-child').css('background-color', 'orchid').css('width', '100px').css('display', 'inline-block');
+//            $('input[type = "password"]').css('border', '1px solid red');
+//            $('label[for = "ch1"]').css('border', '1px solid red');
+//            $(':password').css('border', '1px solid blue');
+//            $('form').attr('action', 'ex01.html');
+//            $('img').attr('src', 'img/placeholder1.jpg'); // element의 속성을 제어하는 attr
+//            $('select').children().eq(2).attr('selected', 'true');
+//            console.log($('select').val());
+//            $('#ra2').attr('checked', 'true');
+//            $('#ch2').attr('checked', 'true');
+//            $('#ch3').attr('checked', 'true');
+            var sel = document.querySelector('select');
+            sel.onchange = function() {
+                console.log($('select').val());
+                console.log($('select').children().eq(0).prop('selected', 'true'));
+            };
+            $(':checkbox').each(function() {
+                this.onchange = function() {
+                    console.log($(this).prop('checked'));
+                };
+            });
+        }
+    </script>
+</head>
+
+<body>
+  <h1>form tag</h1>
+   <form>
+    <div>
+        <img src="" alt="">
+    </div>
+    <div>
+        <label for="id">ID</label>
+        <input type="text" id="id" name="id">
+    </div>
+    <div>
+        <label for="pw">PW</label>
+        <input type="password" id="pw" name="pw">
+    </div>
+    <div>
+        <label for="ran"></label>
+        <input type="range" min="1" max="50" value="25" id="ran" name="ran">
+    </div>
+    <div>
+        <input type="checkbox" id="ch1" name="ch">
+        <label for="ch1">check 1</label>
+        <input type="checkbox" id="ch2" name="ch">
+        <label for="ch2">check 2</label>
+        <input type="checkbox" id="ch3" name="ch">
+        <label for="ch3">check 3</label>
+    </div>
+    <div>
+        <input type="radio" id="ra1" name="ra">
+        <label for="ra1">radio 1</label>
+        <input type="radio" id="ra2" name="ra">
+        <label for="ra2">radio 2</label>
+        <input type="radio" id="ra3" name="ra">
+        <label for="ra3">radio 3</label>
+    </div>
+    <div>
+        <select>
+            <option>sel opt 1</option>
+            <option>sel opt 2</option>
+            <option>sel opt 3</option>
+            <option>sel opt 4</option>
+        </select>
+    </div>
+    <div>
+        <button type="submit">OK</button>
+        <button type="reset">CANCEL</button>
+    </div>
+   </form>
+</body></html>

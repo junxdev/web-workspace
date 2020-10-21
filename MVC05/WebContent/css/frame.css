@@ -1,0 +1,55 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	background-color: white;
+}
+#header, #menu, #content, #footer {
+	width: 1200px;
+	margin: 0px auto;			
+}
+#header {}
+#header > h1 {
+	width: 320px;
+	height: 120px;
+    line-height: 120px;
+    background-image: url(img/redstar.svg);
+    background-size: 80px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+}
+#menu, #footer {
+	background-color: gray;
+}
+#menu {
+	height: 50px;
+}
+#menu > ul {
+	width: 600px;
+	margin: 0px auto;	
+	list-style: none;
+}
+#menu > ul > li {
+	width: 150px;
+	float: left;
+}
+#menu > ul > li > a {
+	border: 1px solid gray;
+	box-sizing: border-box;
+	color: white;
+	text-decoration: none;
+	height: 50px;
+	line-height: 50px;
+	display: block;
+	text-align: center;
+	background-color: gray;
+}
+#menu > ul > li > a:hover {
+	background-color: yellow;
+}
+#content {
+	padding: 20px 0px;
+	clear: both;
+}
+#footer {
+	text-align: center;
+}

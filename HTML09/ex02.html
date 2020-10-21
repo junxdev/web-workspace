@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+//            $('h1').css('color', 'red');
+//            $('p').css('color', 'blue');
+//            $('h1, ul').css('color', 'blue');
+//            $('.item').css('color', 'yellow');
+//            $('#item-b').css('color', 'orchid');
+//            $('li:nth-child(2n)').css('color', 'red');
+//            var h1 = $('h1');
+//            h1.css('color', 'orchid');
+//            var eles = $('p');
+//            console.log(eles);
+//            $(eles[0]).css('color', 'red');
+            
+//            var x = document.querySelector('h1');
+//            var y = document.getElementsByTagName('li');
+//            var z = document.querySelectorAll('div > ul > li');
+//            var p1 = document.querySelector('h1 + p');
+//            var p2 = document.querySelector('h1 + p + p');
+//            var ps = [p1, p2];
+//            $(ps).css('color', 'red');
+            
+//            $('div > ul > li').eq(2).css('color', 'red');
+            $('div > ul > li').css('background-color', 'silver').eq(0).css('color', 'blue').next().css('font-weight', '900').next().css('color', 'red');
+            
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Get elements</h1>
+    <p class="item">same way as selectors in css</p>
+    <p>Let's select!</p>
+    <div>
+        <ul>
+            <li>item a</li>
+            <li id="item-b">item b</li>
+            <li>item c</li>
+            <li id="item-d">item d</li>
+        </ul>
+    </div>
+    <ul>
+        <li>item a</li>
+        <li class="item">item b</li>
+        <li>item c</li>
+        <li class="item">item d</li>
+        <li class="item">item e</li>
+        <li>item f</li>
+        <li>
+            <ol>
+                <li>item g-a</li>
+                <li>item g-b</li>
+                <li>item g-c</li>
+                <li>item g-d</li>
+            </ol>
+        </li>
+    </ul>
+</body></html>

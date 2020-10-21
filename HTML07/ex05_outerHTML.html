@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+</head>
+
+<body>
+    <div>
+        <h1>carousel</h1>
+        <!-- <button onclick="next()">START</button> -->
+        <button>START</button>
+        <p></p>
+    </div>
+    <div>
+        <img />
+    </div>
+    <script type="text/javascript">
+        cnt = 1;
+        var btn = document.querySelector('button');
+        btn.onclick = next;
+        function next() {
+            if (cnt++ == 10) {
+                cnt = 1;
+            }
+            var img = document.querySelector('img');
+            img.outerHTML = '<img src="img/placeholder' + cnt + '.jpg"/>';
+            setTimeout(next, 100);
+        }
+    </script>
+</body></html>

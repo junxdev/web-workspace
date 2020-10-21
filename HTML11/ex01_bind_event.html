@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+//            var a= document.querySelector('a'); 
+//            a.onclick = function() { // DOM level 2; anchor tag의 click 기능(페이지 이동)을 취소
+//                return false;
+//            };
+//            a.addEventListener('click', function(e) { // DOM level 3; 위 onclick이나 다른 addEvent와 무관하게 작동
+//                e.preventDefault(); // 따라서 기본 기능을 제어하고 싶을 때 사용
+//                return false;
+//            })
+            $('a').on('click', function(e) {
+                e.preventDefault(); // return false로도 작동하나 preventDefault 권장
+                console.log('click');
+                return false; // 기본은 return true;
+            });
+            $('#target').click(function() {
+                console.log('target click')
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <h1>event binding</h1>
+    <div id='target'>!</div>
+    <a href="#">link</a>
+</body>
+
+</html>

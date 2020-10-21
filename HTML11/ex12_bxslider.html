@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.min.css">
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
+    <script type="text/javascript">
+        $('document').ready(function() {
+            $('.slider').bxSlider({
+                mode : 'fade',
+                slideWidth : 200,
+                onSliderLoad : function() {
+                    console.log('BXSLIDER');
+                },
+                onSlideNext : function(e, o, n) {
+                    console.log(e, o, n);
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="slider">
+        <div><img src="img/placeholder1.jpg" alt=""></div>
+        <div><img src="img/placeholder2.jpg" alt=""></div>
+        <div><img src="img/placeholder3.jpg" alt=""></div>
+        <div><img src="img/placeholder4.jpg" alt=""></div>
+        <div><img src="img/placeholder5.jpg" alt=""></div>
+        <div><img src="img/placeholder6.jpg" alt=""></div>
+        <div><img src="img/placeholder7.jpg" alt=""></div>
+        <div><img src="img/placeholder8.jpg" alt=""></div>
+        <div><img src="img/placeholder9.jpg" alt=""></div>
+        <div><img src="img/placeholder10.jpg" alt=""></div>
+    </div>
+</body></html>

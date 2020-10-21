@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var callback = function() {
+                alert('Call Event')
+            }
+            $('button').first()
+                .on('mouseover', function() {
+                console.log("Put it away!!");
+            })
+                .on('click', callback)
+                .on('click', function() {
+                console.log("Don't cancel me!")
+            });
+            $('button').first().next().on('click', function() {
+                $('button').first().off('click', callback); // callback 함수만
+//                $('button').first().off('click'); // click에 배정된 모든 함수
+            });
+//            $('button').first().next().next().on('click', function() {
+//                console.log('CLICK');
+//                $(this).off();
+//            });
+            $('button').first().next().next().one('click', function() {
+                console.log('CLICK');
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <button>CALL</button>
+    <button>OFF</button>
+    <button>ONE</button>
+</body></html>

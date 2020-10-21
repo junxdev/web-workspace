@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <style type="text/css">
+        .err {
+            color: red;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#id, #pw').focus(function(e) {
+                $(e.target).next().remove();
+            });
+            $('#id, #pw').blur(function(e) {
+                if ($(e.target).val() == '') {
+                    $('<span class="err"> SHOULD BE FILLED</span>').insertAfter(e.target);
+                } else if ($(e.target).val().length < 6) {
+//                    $('<span class="err"> MINIMAL LENGTH OF PASSWORD IS 6</span>').insertAfter(e.target);
+                    $(e.target).select();
+                }
+            });
+            $('#id').select(function(e) {
+                    $('<span class="err"> MINIMAL LENGTH OF PASSWORD IS 6</span>').insertAfter(e.target);
+            });
+            $('form').submit(function() {
+                $('.err').remove();
+                if ($('#id').val() == '') {
+                    console.log('NO ID');
+                    $('<span class="err"> INSERT ID</span>').insertAfter('#id');
+                    $('#id').focus();
+                    return false;
+                }
+                if ($('#pw').val() == '') {
+                    console.log('NO PASSWORD');
+                    $('<span class="err"> INSERT PASSWORD</span>').insertAfter('#pw');
+                    $('#pw').focus();
+                    return false;
+                }
+                return true;
+            });
+            $('select').change(function(e) {
+                console.log($(e.target).val());
+            });
+            $(':radio').change(function(e) {
+                console.log($(e.target).attr('id'));
+                console.log($(e.target).next().text());
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>FORM</h1>
+    <form action="#">
+        <div>
+            <label for="id">ID</label>
+            <input type="text" id="id">
+        </div>
+        <div>
+            <label for="pw">PW</label>
+            <input type="password" id="pw">
+        </div>
+        <div>
+            <label for="ran"></label>
+            <input type="range" id="ran">
+        </div>
+        <div>
+            <input type="checkbox" id="ch1" name="ch">
+            <label for="ch1">CAT</label>
+            <input type="checkbox" id="ch2" name="ch">
+            <label for="ch2">DOG</label>
+            <input type="checkbox" id="ch3" name="ch">
+            <label for="ch3">PIG</label>
+        </div>
+        <div>
+            <input type="radio" id="ra1" name="ra">
+            <label for="ra1">BLACK</label>
+            <input type="radio" id="ra2" name="ra">
+            <label for="ra2">WHITE</label>
+            <input type="radio" id="ra3" name="ra">
+            <label for="ra3">YELLOW</label>
+        </div>
+        <div>
+            <select name="" id="">
+                <option value="">ITEM 01</option>
+                <option value="">ITEM 02</option>
+                <option value="">ITEM 03</option>
+                <option value="">ITEM 04</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit">GO</button>
+            <button type="reset">STOP</button>
+        </div>
+    </form>
+</body></html>

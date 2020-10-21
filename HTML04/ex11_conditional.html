@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script type="text/javascript">
+        var h;
+        h = 0;
+        if(h) {
+            console.log('true');
+        } else {
+            console.log('false');
+        }
+        h = ""; // if no string, false
+        if(h) {
+            console.log('true');
+        } else {
+            console.log('false');
+        }
+        h = null;
+        if(h) { // if null, false
+            console.log('true');
+        } else {
+            console.log('false');
+        }
+        var n; // if unidentified, false
+        if(n) {
+            console.log('true');
+        } else {
+            console.log('false');
+        }
+        var x = 2;
+        switch(x) {
+            case 0 : console.log('x is 0'); break;
+            case 1 : console.log('x is 1'); break;
+            case 2 : console.log('x is 2'); break;
+            case 3 : console.log('x is 3'); break;
+            default : console.log('no x found');
+        }
+        var y = true;
+        switch(y) {
+            case true : console.log('yes'); break;
+            case false : console.log('no'); break;
+                default : console.log('any value?');
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

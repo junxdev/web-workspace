@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <style type="text/css">
+        h1+div {
+            background-color: black;
+            overflow: hidden;
+            width: 100px;
+        }
+
+        h1+div>ul {
+            padding: 0px;
+            width: 600px;
+            float: left;
+            margin: 0px;
+            /*
+            overflow: hidden;
+            height: 600px;
+*/
+        }
+
+        h1+div>ul>li {
+            list-style: none;
+            float: left;
+            width: 100px;
+        }
+
+        h1+div>ul>li>img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ANIMATION</h1>
+    <div>
+        <ul>
+            <li><img src="img/jaguar.jpg" alt=""></li>
+            <li><img src="img/jazzmaster.jpg" alt=""></li>
+            <li><img src="img/precision.jpg" alt=""></li>
+            <li><img src="img/stratocaster.jpg" alt=""></li>
+            <li><img src="img/telecaster.jpg" alt=""></li>
+            <li><img src="img/thinline.jpg" alt=""></li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        var ul = document.querySelector('ul');
+        ul.style.marginLeft = '0px';
+        var boo = true;
+
+        function move() {
+            if (parseInt(ul.style.marginLeft) - 1 >= -500 && boo) {
+                ul.style.marginLeft = (parseInt(ul.style.marginLeft) - 1) + 'px';
+            } else if (parseInt(ul.style.marginLeft) == 0) {
+                boo = true;
+            } else {
+                boo = false;
+                ul.style.marginLeft = (parseInt(ul.style.marginLeft) + 1) + 'px';
+            }
+        }
+        setInterval(move, 10);
+    </script>
+</body></html>

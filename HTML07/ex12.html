@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <style type="text/css">
+        body {
+            font-family: D2Coding;
+        }
+        body > div {
+            width: 1200px;
+            margin: 0px auto;
+            background-color: white;
+        }
+        body > div > #header {
+            font-family: malgun-gothic;
+        }
+        body > div > #nav {
+            height: 50px;
+            background-color: rgb(250, 250, 235);
+        }
+        body > div > #nav > ul {
+            padding: 0px;
+            width: 1000px;
+            margin: 0px auto;
+        }
+        body > div > #nav > ul > li {
+            list-style: none;
+            padding: 0px 50px;
+            width: 100px;
+            float: left;
+        }
+        body > div > #nav > ul > li > a {
+            line-height: 50px;
+            text-align: center;
+            display: block;
+            text-decoration: none;
+            color: black;
+        }
+        body > div > #nav > ul > li > ol {
+            display: none;
+            position: absolute;
+            padding: 0px;
+        }
+        body > div > #nav > ul > li > ol > li {
+            list-style: none;
+        }
+        body > div > #nav > ul > li > ol > li > a{
+            color: dimgrey;
+            display: block;
+            height: 50px;
+            padding: 0px 30px 0px 10px;
+            line-height: 50px;
+            text-decoration: none;
+        }
+        body > div > #nav > ul > li > ol > li:nth-child(1) > a  {
+            padding: 30px 30px 0px 10px;
+        }
+        body > div > #section {
+            width: 1200px;
+            margin: 100px auto;
+        }
+        body > div > #section > div {
+            width: 1000px;
+            overflow: hidden;
+            margin: 0px auto;
+        }
+        body > div > #section > div > ul {
+            width: 2000px;
+            padding: 0px;
+        }
+        body > div > #section > div > ul > li {
+            width: 200px;
+            float: left;
+            list-style: none;
+        }
+        body > div > #section > div > ul > li > img {
+        }
+        body > div > #section > div > a {
+            position: relative;
+            top: -204px;
+            left: 0px;
+            text-align: center;
+            line-height: 200px;
+            opacity: 0.75;
+            background-color: rgb(250, 250, 235);
+            color: black;
+            height: 200px;
+            width: 50px;
+            display: inline-block;
+            text-decoration: none;
+        }
+        body > div > #section > div > a:last-child {
+            left:892px;
+        }
+        body > div > #footer {
+            height: 200px;
+            line-height: 200px;
+            background-color: rgb(250, 250, 235);
+        }
+    </style>
+    <script type="text/javascript">
+        var cul, prev, next, submenu1;
+        function cprev() {
+            cul.style.marginLeft = (parseInt(cul.style.marginLeft) - 200) + 'px';
+        }
+        function cnext() {
+            cul.style.marginLeft = (parseInt(cul.style.marginLeft) + 200) + 'px';
+        }
+        window.onload = function() {
+            cul = document.querySelector('#section > div > ul');
+            cul.style.marginLeft = '0px';
+            
+            prev = document.querySelectorAll('#section > div > a')[0];
+            next = document.querySelectorAll('#section > div > a')[1]; 
+            var ccount = 0;
+            prev.onclick = function() {
+                if(ccount++ < 5) {
+                    cprev();
+                } else {
+                    ccount--;
+                }
+                return false;
+            }
+            next.onclick = function() {
+                if(ccount-- > 0) {
+                    cnext();
+                } else {
+                    ccount++;
+                }
+                return false;
+            }
+            
+            submenu1 = document.querySelectorAll('#nav > ul > li')[1]; 
+            submenu1.onmouseover = function() {
+                var ol = submenu1.children[1];
+                ol.style.display = 'block';
+                return false;
+            }
+            submenu1.onmouseout = function() {
+                var ol = submenu1.children[1];
+                ol.style.display = 'none';
+                return false;
+            }
+           
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <div id="header">
+            <h1>MUSEUM ONEUL</h1>
+        </div>
+        <div id="nav">
+            <ul>
+                <li><a href="">HOME</a></li>
+                <li>
+                   <a href="">EXHIBITION</a>
+                   <ol>
+                       <li><a href="#">SEOUL 2020</a></li>
+                       <li><a href="#">FOREST</a></li>
+                       <li><a href="#">SEAFUD</a></li>
+                       <li><a href="#">VANTALA</a></li>
+                   </ol> 
+                </li>
+                <li><a href="">COLLECTION</a></li>
+                <li><a href="">AUCTION</a></li>
+                <li><a href="">ABOUT ONEUL</a></li>
+            </ul>
+        </div>
+        <div id="section">
+           <div>
+            <ul>
+                <li><img src="img/placeholder1.jpg" alt=""></li>
+                <li><img src="img/placeholder2.jpg" alt=""></li>
+                <li><img src="img/placeholder3.jpg" alt=""></li>
+                <li><img src="img/placeholder4.jpg" alt=""></li>
+                <li><img src="img/placeholder5.jpg" alt=""></li>
+                <li><img src="img/placeholder6.jpg" alt=""></li>
+                <li><img src="img/placeholder7.jpg" alt=""></li>
+                <li><img src="img/placeholder8.jpg" alt=""></li>
+                <li><img src="img/placeholder9.jpg" alt=""></li>
+                <li><img src="img/placeholder10.jpg" alt=""></li>
+            </ul>
+            <a href="">prev</a>
+            <a href="">next</a>
+            </div>
+        </div>
+        <div id="footer">
+            Copyright &copy; 오늘미술관. All rights reserved.
+        </div>
+    </div>
+</body></html>

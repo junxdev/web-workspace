@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script type="text/javascript">
+        function func(alphabet) {
+            var ul = document.children[0].lastElementChild.children[1];
+            var item = document.createElement('li');
+            var msg = document.createTextNode('ITEM ' + alphabet);
+            item.appendChild(msg);
+            ul.appendChild(item);
+        }
+        function add() {
+//            console.log('die');
+//            alert('haha');
+            var alphabet = window.prompt('Type the number of item');
+            return func(alphabet);
+        }
+    </script>
+</head>
+<body>
+    <h1>LIST</h1>
+    <ul>
+        <li>ITEM A</li>
+        <li>ITEM B</li>
+        <li>ITEM C</li>
+        <li>ITEM D</li>
+    </ul>
+    <button onclick="add()">ADD ITEM</button>
+</body>
+</html>

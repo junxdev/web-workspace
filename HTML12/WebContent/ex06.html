@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('<tr/>').append('<th>ID</th>')
+						.append('<th>NAME</th>')
+						.append('<th>JOB</th>')
+						.append('<th>MANAGER</th>')
+						.append('<th>HIREDATE</th>')
+						.append('<th>SALARY</th>')
+						.append('<th>COMMISSION</th>')
+						.append('<th>DEPARTMENT</th>')
+						.appendTo('table');
+			$.get('emplist.bit', function(d) {
+				$(d).find('emp').each(function() {
+					$('<tr/>').append('<td>' + $(this).children().eq(0).text() + '</td>')
+								.append('<td>' + $(this).children().eq(1).text() + '</td>')
+								.append('<td>' + $(this).children().eq(2).text() + '</td>')
+								.append('<td>' + $(this).children().eq(3).text() + '</td>')
+								.append('<td>' + $(this).children().eq(4).text() + '</td>')
+								.append('<td>' + $(this).children().eq(5).text() + '</td>')
+								.append('<td>' + $(this).children().eq(6).text() + '</td>')
+								.append('<td>' + $(this).children().eq(7).text() + '</td>')
+								.appendTo('table');
+				})
+			})
+		});
+	</script>
+</head>
+<body>
+	<h1>Emp List</h1>
+	<table></table>
+</body>
+</html>

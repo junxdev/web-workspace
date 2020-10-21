@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            h2{ /*Tag Selector*/
+                color: red;
+            }
+            ul{ /*Tag Selector*/
+                background-color: aquamarine;
+            }
+            #ida{ /*ID Selector*/
+                color: bisque;
+            }
+            #idb{
+                background-color: indianred;
+            }
+            .cla{ /*Class Selector*/
+                background-color: cadetblue;
+            }
+            .clb{
+                background-color: darkred;
+            }
+            li{
+                background-color: burlywood;
+            }
+            ul{
+                background-color: aliceblue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>선택자;Selector</h1>
+        <h2>Simple selectors</h2>
+        <ul>
+            <li>Tag</li>
+            <li>ID</li>
+            <li>Class</li>
+        </ul>
+        <h2>The priority level of the selector</h2>
+        <ul>
+            <li>Inline > ID > Class > Tag</li>
+            <li>At the same level, the latter would be overrapped</li>
+        </ul>
+        <ol>
+            <li>ITEM1 WITH NO SELECTOR</li>
+            <li id="ida">ITEM2 ID A</li>
+            <li class="cla">ITEM3 CLASS A</li>
+            <li id="idb" class="cla">ITEM4 ID B CLASS A</li>
+            <li class="clb">ITEM5 CLASS B</li>
+            <li class="cla clb">ITEM6 CLASS A, B</li>
+            <li>ITEM7 WITH NO SELECTOR</li>
+            <li class="clb">ITEM8 CLASS A</li>
+        </ol>
+    </body>
+</html>

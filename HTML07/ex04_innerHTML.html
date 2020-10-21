@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+</head>
+
+<body>
+    <h1>inner & outer</h1>
+    <div>
+        <ul>
+            <li>ITEM A</li>
+            <li>ITEM B</li>
+            <li>ITEM C</li>
+            <li>ITEM D</li>
+        </ul>
+    </div>
+    <div id="target"></div>
+    <script type="text/javascript">
+        var div = document.querySelector('div');
+        var ul = div.querySelector('ul');
+        ul.innerHTML = '<li>EDITOR&#39;s CHOICE A</li><li>EDITOR&#39;s CHOICE B</li>';
+        ul.outerHTML = '<ol><li>EDITOR&#39;s CHOICE A</li><li>EDITOR&#39;s CHOICE B</li></ol>'; // 자신 포함한 HTML 수정
+        var target = document.querySelector('#target');
+        target.outerHTML = '<ul>' + ul.innerHTML + '</ul>';
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script type="text/javascript">
+        function fn(a) {
+            if(typeof a == 'function') a();
+            else if((typeof a).toLowerCase() == 'string') console.log(a);
+            else if((typeof a).toLowerCase() == 'number') console.log(a + 100);
+            else console.log(a[0]);
+        }
+        fn('home');
+        fn(10);
+        fn(function() {console.log("anonymous function run")})
+        
+        var obj = new Object();
+        obj.key1 = 'val1';
+        obj.key2 = function(){};
+        obj = {'key1' : 'val1', 'key2' : function(){}}
+    </script>
+</head>
+
+<body>
+
+</body></html>

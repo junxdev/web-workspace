@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>HTML12</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  <servlet>
+  	<servlet-name>ex04</servlet-name>
+  	<servlet-class>service.Ex04</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ex04</servlet-name>
+  	<url-pattern>/ex04.bit</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>deptlistJson</servlet-name>
+  	<servlet-class>service.Dept</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>deptlistJson</servlet-name>
+  	<url-pattern>/deptlist.bit</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>emplistXML</servlet-name>
+  	<servlet-class>service.Emp</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>emplistXML</servlet-name>
+  	<url-pattern>/emplist.bit</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>empAdd</servlet-name>
+  	<servlet-class>service.EmpAdd</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>empAdd</servlet-name>
+  	<url-pattern>/empadd.bit</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>empOneXML</servlet-name>
+  	<servlet-class>service.EmpOne</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>empOneXML</servlet-name>
+  	<url-pattern>/empdetail.bit</url-pattern>
+  </servlet-mapping>
+</web-app>

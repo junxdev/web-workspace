@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            #header {
+                
+            }
+            #header > h1 {
+                width: 200px;
+                height: 100px;
+                
+            }
+            #nav {}
+            #nav > ul {
+                width: 1074;
+                padding: 0px;
+                margin: 0px auto;
+                overflow: hidden;
+                background-color: rgb(255, 234, 234);
+            }
+            #nav > ul > li {
+                border-left: 3px solid red;
+                list-style: none;
+                width: 150px;
+                float: left;
+            }
+            #nav > ul > li:last-child {
+                border-right: 3px solid red;
+            }
+            #nav > ul > li {
+                height: 20px;
+                display: block;
+                color: chocolate;
+                text-align: center;
+                text-decoration: none;
+                transition-duration: 1s;
+                overflow: hidden;
+            }
+            #nav > ul > li:hover {
+                color: yellow;
+                height: 100px;
+            }
+            #section {
+                width: 70%;
+                float: left;
+                background-color: beige;
+            }
+            .article {
+                width: 30%;
+                float: left;
+            }
+            .article > a {
+                float: left;
+                display: inline-block;
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-image: url(img/0144522534_gtr_frt_001_rr.jpg);
+                width: 30%;
+                height: 700px;
+            }
+/*
+            .article > a:first-child {
+                background-image: url(img/0377015583_gtr_frt_001_rr.jpg);
+                background-size: 100%;
+                background-repeat: no-repeat;
+                width: 30%;
+                height: 300px;
+            }
+            .article > a:nth-child(2) {
+            }
+*/
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <h1>Fender</h1>
+        </div>
+        <div id="nav">
+            <ul>
+                <li>
+                    <a href="#">Guitars</a>
+                    <ul>
+                        <li>Stratocaster</li>
+                        <li>Telecaster</li>
+                        <li>Jaguar</li>
+                    </ul>
+                </li>
+                <li><a href="#">Basses</a></li>
+                <li><a href="#">Amplifiers</a></li>
+                <li><a href="#">Effectors</a></li>
+                <li><a href="#">Accessories</a></li>
+                <li><a href="#">Books</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div id="section">
+            <h2>Guitar</h2>
+            <p>The most beautiful and artistic instruments in the world.</p>
+        </div>
+        <div class="article" >
+            <a href="https://shop.fender.com/en-US/acoustic-guitars/">New Acoustic</a>
+            <a href="https://shop.fender.com/en-US/headphones/">Headphones never seen before</a>
+            <a href="https://shop.fender.com/en-US/squier-series/paranormal/">Looking for affordable fender? Here's Squire!</a>
+        </div>
+        <div id="aside"></div>
+        <div id="footer"></div>
+    </body>
+</html>
